@@ -24,7 +24,7 @@ A web app for text editing builded with vanilla js.
 ### Links
 
 - Solution URL: [Github repository](https://github.com/RafaelGLeal/Text-Editor)
-- Live Site URL: [Live Site](https://github.com/RafaelGLeal/Text-Editor)
+- Live Site URL: [Live Site](https://rafaelgleal.github.io/Text-Editor/)
 
 ### Built with
 
