@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/c939d0e917.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+    <title>Editor de Texto</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="text-center">
+    <h1 class="banner p-3">Editor de Texto</h1>
+    <main class="container">
+      <div class="row">
+        <div class="col options-menu">
+          <button
+            id="bold"
+            type="button"
+            onclick="activateBtn('bold')"
+            class="btn btn-light"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Negrito"
+          >
+            N
+          </button>
+          <button
+            id="italic"
+            type="button"
+            onclick="activateBtn('italic')"
+            class="btn btn-light"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Itálico"
+          >
+            I
+          </button>
+          <button
+            id="underline"
+            type="button"
+            onclick="activateBtn('underline')"
+            class="btn btn-light"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Sublinhado"
+          >
+            U
+          </button>
+          <button
+            id="left-align"
+            type="button"
+            onclick="activateBtn('left-align')"
+            class="align btn btn-light"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Alinhar Esquerda"
+          >
+            <i class="fas fa-align-left"></i>
+          </button>
+          <button
+            id="center-align"
+            type="button"
+            onclick="activateBtn('center-align')"
+            class="align btn btn-light"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Alinhar Centro"
+          >
+            <i class="fas fa-align-center"></i>
+          </button>
+          <button
+            id="right-align"
+            type="button"
+            onclick="activateBtn('right-align')"
+            class="align btn btn-light"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Alinhar Direita"
+          >
+            <i class="fas fa-align-right"></i>
+          </button>
+          <button
+            class="btn btn-light"
+            data-clipboard-target="#text-input "
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Copiar"
+          >
+            <i class="far fa-copy"></i>
+          </button>
+          <select
+            class="form-select form-select-sm bg-light"
+            aria-label=".form-select-sm"
+          >
+            <option class="font-0" onclick="changeFont('0')">Montserrat</option>
+            <option class="font-1" onclick="changeFont('1')">Oswald</option>
+            <option class="font-2" onclick="changeFont('2')">Roboto</option>
+            <option class="font-3" onclick="changeFont('3')">Ubuntu</option>
+          </select>
+        </div>
+      </div>
+      <hr />
+      <div class="row editor">
+        <div class="col col-text">
+          <div class="form-group">
+            <label for="text-input">Seu texto</label>
+            <textarea
+              class="form-control"
+              id="text-input"
+              onkeyup="updateText()"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col col-text">
+          <label for="text-input">Texto formatado</label>
+          <div id="text-output" class="bg-light"></div>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
